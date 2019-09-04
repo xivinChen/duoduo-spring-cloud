@@ -1,0 +1,7 @@
+# Project exclude paths
+/duoduo-api/target/
+/duoduo-consumer/target/
+/duoduo-product-search-producer/target/
+/duoduo-service/target/
+/duoduo-swagger-ui/target/
+/duoduo-user-producer/target/

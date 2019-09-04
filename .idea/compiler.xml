@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="duoduo-product-analyse-producer" />
+        <module name="duoduo-consumer" />
+        <module name="duoduo-product-search-producer" />
+        <module name="duoduo-swagger-ui" />
+        <module name="duoduo-user-producer" />
+        <module name="duoduo-api" />
+        <module name="duoduo-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="duoduo-api" target="1.8" />
+      <module name="duoduo-consumer" target="1.8" />
+      <module name="duoduo-product-analyse-producer" target="1.8" />
+      <module name="duoduo-product-search-producer" target="1.8" />
+      <module name="duoduo-service" target="1.8" />
+      <module name="duoduo-spring-cloud" target="1.8" />
+      <module name="duoduo-swagger" target="1.8" />
+      <module name="duoduo-swagger-ui" target="1.8" />
+      <module name="duoduo-user-producer" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/duoduo-api/duoduo-api.iml" filepath="$PROJECT_DIR$/duoduo-api/duoduo-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-consumer/duoduo-consumer.iml" filepath="$PROJECT_DIR$/duoduo-consumer/duoduo-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-product-analyse-producer/duoduo-product-analyse-producer.iml" filepath="$PROJECT_DIR$/duoduo-product-analyse-producer/duoduo-product-analyse-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-product-search-producer/duoduo-product-search-producer.iml" filepath="$PROJECT_DIR$/duoduo-product-search-producer/duoduo-product-search-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-service/duoduo-service.iml" filepath="$PROJECT_DIR$/duoduo-service/duoduo-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-spring-cloud.iml" filepath="$PROJECT_DIR$/duoduo-spring-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-swagger-ui/duoduo-swagger-ui.iml" filepath="$PROJECT_DIR$/duoduo-swagger-ui/duoduo-swagger-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-user-producer/duoduo-user-producer.iml" filepath="$PROJECT_DIR$/duoduo-user-producer/duoduo-user-producer.iml" />
+    </modules>
+  </component>
+</project>

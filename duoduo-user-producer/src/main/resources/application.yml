@@ -1,0 +1,18 @@
+server:
+  port: 8100
+mybatis:
+  mapper-locations:
+    - classpath:mapping/*.xml
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/duoduo?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123zxc
+  application:
+    name: duoduo-user-producer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848

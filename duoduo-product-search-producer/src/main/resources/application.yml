@@ -1,0 +1,19 @@
+server:
+  port: 8200
+mybatis:
+  mapper-locations:
+    - classpath:mapping/*.xml
+spring:
+  application:
+    name: duoduo-user-producer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+      cluster-nodes: 127.0.0.1:9300
+      cluster-name: elasticsearch_bosen
