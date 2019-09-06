@@ -16,10 +16,10 @@
 
 
   <dependencies>
-    <dependency>
+    <!--<dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>cn.duoduo</groupId>
       <artifactId>duoduo-swagger-ui</artifactId>

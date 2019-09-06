@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name: duoduo-user-producer
+    name: duoduo-consumer
   cloud:
     nacos:
       discovery:

@@ -2,14 +2,16 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/duoduo-admin-producer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/duoduo-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/duoduo-api-es" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/duoduo-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/duoduo-product-analyse-producer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/duoduo-product-search-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/duoduo-redis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/duoduo-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/duoduo-swagger" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/duoduo-swagger" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/duoduo-swagger-ui" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/duoduo-tx-manager" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/duoduo-user-producer" charset="UTF-8" />
   </component>
 </project>

@@ -70,6 +70,10 @@
         </dependency>
         <dependency>
             <groupId>cn.duoduo</groupId>
+            <artifactId>duoduo-api-es</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.duoduo</groupId>
             <artifactId>duoduo-swagger-ui</artifactId>
         </dependency>
         <dependency>

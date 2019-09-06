@@ -16,13 +16,13 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Document(indexName = "product",type = "product",shards = 1,replicas = 0)
-public class Product implements Serializable {
+public class EsProduct implements Serializable {
 
     @Id
     private int id;
     @Field(type = FieldType.Keyword)
     private String name;
-    @Field(type = FieldType.Keyword)
+    @Field(analyzer = "ik_max_word",type = FieldType.Text)
     private String title;
     @Field(analyzer = "ik_max_word",type = FieldType.Text)
     private String describe;

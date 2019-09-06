@@ -16,6 +16,25 @@
 
 
   <dependencies>
+
+    <dependency>
+      <groupId>com.codingapi.txlcn</groupId>
+      <artifactId>txlcn-tc</artifactId>
+
+    </dependency>
+
+    <!-- 分布式事务-->
+    <dependency>
+      <groupId>com.codingapi.txlcn</groupId>
+      <artifactId>txlcn-txmsg-netty</artifactId>
+    </dependency>
+
+    <!--<dependency>
+      <groupId>org.bytesoft</groupId>
+      <artifactId>bytetcc-supports-springcloud</artifactId>
+      <version>0.5.7</version>
+    </dependency>-->
+
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -67,6 +86,11 @@
       <artifactId>duoduo-api</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>com.github.jsqlparser</groupId>
+      <artifactId>jsqlparser</artifactId>
+      <version>1.4</version>
+    </dependency>
 
     <dependency>
       <groupId>io.springfox</groupId>
@@ -78,6 +102,7 @@
       <artifactId>springfox-swagger-ui</artifactId>
       <version>2.9.2</version>
     </dependency>
+
   </dependencies>
 
 

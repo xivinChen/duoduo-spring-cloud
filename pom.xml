@@ -16,6 +16,10 @@
         <module>duoduo-api</module>
         <module>duoduo-user-producer</module>
         <module>duoduo-swagger-ui</module>
+        <module>duoduo-admin-producer</module>
+        <module>duoduo-api-es</module>
+        <module>duoduo-tx-manager</module>
+        <module>duoduo-redis</module>
     </modules>
 
 
@@ -25,6 +29,37 @@
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.bytesoft</groupId>
+                <artifactId>bytetcc-supports-springcloud</artifactId>
+                <version>0.5.7</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-zookeeper-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-zookeeper-discovery</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.netflix.eureka</groupId>
+                        <artifactId>eureka-client</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-consul-discovery</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -68,6 +103,12 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
                 <version>0.9.0.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>1.2.12</version>
             </dependency>
 
 
@@ -152,6 +193,30 @@
                 <version>2.1.2.RELEASE</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-tm</artifactId>
+                <version>5.0.2.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-tc</artifactId>
+                <version>5.0.2.RELEASE</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jsqlparser</artifactId>
+                        <groupId>com.github.jsqlparser</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-txmsg-netty</artifactId>
+                <version>5.0.2.RELEASE</version>
+            </dependency>
+
             <!-- 包冲突解决 -->
             <dependency>
                 <groupId>com.google.guava</groupId>
@@ -172,6 +237,21 @@
             <dependency>
                 <groupId>cn.duoduo</groupId>
                 <artifactId>duoduo-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.duoduo</groupId>
+                <artifactId>duoduo-api-es</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.duoduo</groupId>
+                <artifactId>duoduo-redis</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.duoduo</groupId>
+                <artifactId>duoduo-tx-manager</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 

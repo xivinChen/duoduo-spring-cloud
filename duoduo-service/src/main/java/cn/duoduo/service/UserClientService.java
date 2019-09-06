@@ -13,6 +13,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name = "duoduo-user-producer",configuration = FeignClientConfig.class,fallbackFactory = UserClientServiceFallback.class)
 public interface UserClientService {
@@ -20,6 +21,6 @@ public interface UserClientService {
     @GetMapping("/user/{id}")
     User get(@PathVariable("id") int id);
 
-    @PostMapping("/user")
-    int save(User user);
+    @PostMapping("/user/")
+    int save(@RequestBody User user);
 }
