@@ -54,10 +54,20 @@
       <artifactId>spring-boot-starter-aop</artifactId>
     </dependency>
 
+    <!-- 使用thymeleaf模板-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+
     <!-- 模块依赖 -->
     <dependency>
       <groupId>cn.duoduo</groupId>
       <artifactId>duoduo-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>cn.duoduo</groupId>
+      <artifactId>duoduo-api-es</artifactId>
     </dependency>
     <dependency>
       <groupId>cn.duoduo</groupId>

@@ -153,8 +153,13 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.1.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.9.4" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:2.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf-spring5:3.0.11.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf:3.0.11.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.attoparser:attoparser:2.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.4.RELEASE" level="project" />
     <orderEntry type="module" module-name="duoduo-api" />
-    <orderEntry type="module" module-name="duoduo-service" />
     <orderEntry type="module" module-name="duoduo-api-es" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-elasticsearch:2.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-elasticsearch:3.1.9.RELEASE" level="project" />
@@ -206,6 +211,7 @@
     <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.36.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.36.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.36.Final" level="project" />
+    <orderEntry type="module" module-name="duoduo-service" />
     <orderEntry type="module" module-name="duoduo-swagger-ui" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger2:2.9.2" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-annotations:1.5.20" level="project" />

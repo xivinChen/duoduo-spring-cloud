@@ -29,10 +29,28 @@ public class EsProduct implements Serializable {
     private int categoryId;
     private int brandId;
     private int status;
+    private String image;
+    private double price;
     @ApiModelProperty(hidden = true)
     private Timestamp createdTime;
     @ApiModelProperty(hidden = true)
     private Timestamp updatedTime;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     public int getId() {
         return id;

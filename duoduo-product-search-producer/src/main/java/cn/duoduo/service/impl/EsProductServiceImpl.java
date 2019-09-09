@@ -142,7 +142,8 @@ public class EsProductServiceImpl implements EsProductService {
             nativeSearchQueryBuilder.withSort(SortBuilders.scoreSort().order(SortOrder.DESC));
 
 
-        return esProductRepository.search(build);
+        Page<EsProduct> search = esProductRepository.search(build);
+        return  search;
     }
 
 
