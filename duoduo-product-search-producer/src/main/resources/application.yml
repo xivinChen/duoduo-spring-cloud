@@ -5,7 +5,7 @@ mybatis:
     - classpath:mapping/*.xml
 spring:
   application:
-    name: duoduo-user-producer
+    name: duoduo-product-search-producer
   cloud:
     nacos:
       discovery:

@@ -4,7 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
-import springfox.documentation.builders.*;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.builders.ResponseMessageBuilder;
 import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
@@ -21,8 +24,8 @@ import java.util.List;
 /**
  * @ClassName SwaggerConfig
  * @Description TODO
- * @Author Yu XueWen
- * @Email 8586826@qq.com
+ * @Author xivinChen
+ * @Email 1250402127@qq.com
  * @Versio V1.0
  **/
 
@@ -64,7 +67,6 @@ public class SwaggerConfig {
 
 
         List<Parameter> addParameters = new ArrayList<Parameter>();
-
         return new Docket(DocumentationType.SWAGGER_2).extensions(getExtension())
                 .apiInfo(getApiInfo())
                     .select()
@@ -102,10 +104,10 @@ public class SwaggerConfig {
 
     private ApiInfo getApiInfo() {
         // 定义联系人信息
-        Contact contact = new Contact("YuXueWen","https://github.com/xiaoemoxiw", "yuxuewen23@qq.com");
+        Contact contact = new Contact("xivin","https://www.java1024.com/", "12504020127@qq.com");
         return new ApiInfoBuilder()
-                .title("博森CCR系统") // 标题
-                .description("博森CCR系统API信息") // 描述信息
+                .title("朵朵 商城") // 标题
+                .description("朵朵 电商系统API信息") // 描述信息
                 .version("1.0.0") // //版本
                 .license("Apache 2.0")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0")

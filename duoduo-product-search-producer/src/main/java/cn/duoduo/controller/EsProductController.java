@@ -11,6 +11,7 @@ import cn.duoduo.service.UserClientService;
 import cn.duoduo.vo.EsProduct;
 import cn.duoduo.vo.EsProductSearch;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -32,14 +33,14 @@ public class EsProductController {
     }
 
     @PostMapping("/")
-    public Object save(@RequestBody EsProduct esProduct) {
+    public int save(@RequestBody EsProduct esProduct) {
         return this.esProductService.save(esProduct);
     }
 
-    @GetMapping("search")
-    public Object search(EsProductSearch esProductSearch,
-                         @RequestParam(value="pageNum",defaultValue="1") int pageNum,
-                         @RequestParam(value="pageSize",defaultValue="10") int pageSize) {
+    @GetMapping("/search")
+    public Page<EsProduct> search(EsProductSearch esProductSearch,
+                                  @RequestParam(value="pageNum",defaultValue="1") int pageNum,
+                                  @RequestParam(value="pageSize",defaultValue="10") int pageSize) {
 
         return this.esProductService.search(esProductSearch,pageNum,pageSize);
     }
