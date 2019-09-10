@@ -8,6 +8,8 @@ package cn.duoduo.service.fallback;
 
 import cn.duoduo.service.EsGoodClientService;
 import cn.duoduo.vo.EsGood;
+import cn.duoduo.vo.PageFeign;
+import cn.duoduo.vo.qingtaoke.QingTaoKeSearch;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +32,12 @@ public class EsGoodClientServiceFallBack implements FallbackFactory<EsGoodClient
 
             @Override
             public Object list() {
+                return null;
+            }
+
+            @Override
+            public PageFeign<EsGood> search(QingTaoKeSearch qingTaoKeSearch, int pageNum, int pageSize) {
+                System.err.println("hysrix");
                 return null;
             }
         };

@@ -14,20 +14,20 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-@Document(indexName = "good",type = "good",shards = 1,replicas = 0)
+@Document(indexName = "goods",type = "goods",shards = 1,replicas = 0)
 public class EsGood implements Serializable {
 
     @Id
     private String goods_id;
     private String goods_pic;
-    @Field(type = FieldType.Text)
+    @Field(analyzer = "ik_max_word",type = FieldType.Text)
     private String goods_title;
-    @Field(type = FieldType.Text)
+    @Field(analyzer = "ik_max_word",type = FieldType.Text)
     private String goods_short_title;
     private int goods_cat;
     private float goods_price;
     private long goods_sales;
-    @Field(type = FieldType.Text)
+    @Field(analyzer = "ik_max_word",type = FieldType.Text)
     private String goods_introduce;
     private int is_tmall;
     private float commission;

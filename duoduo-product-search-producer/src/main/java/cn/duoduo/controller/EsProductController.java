@@ -41,7 +41,7 @@ public class EsProductController {
 
     @PostMapping("/search")
     public Page<EsProduct> search(@RequestBody EsProductSearch esProductSearch,
-                                  @RequestParam(value="pageNum",defaultValue="1") int pageNum,
+                                  @RequestParam(value="pageNum",defaultValue="0") int pageNum,
                                   @RequestParam(value="pageSize",defaultValue="10") int pageSize) {
 
         Page<EsProduct> search = this.esProductService.search(esProductSearch, pageNum, pageSize);
@@ -64,7 +64,7 @@ public class EsProductController {
 
     @GetMapping("/simple_search")
     public Object simpleSearch(@RequestParam String keyWord,
-                               @RequestParam(value="pageNum",defaultValue="1") int pageNum,
+                               @RequestParam(value="pageNum",defaultValue="0") int pageNum,
                                @RequestParam(value="pageSize",defaultValue="10") int pageSize) {
         return this.esProductService.simpleSearch(keyWord,pageNum,pageSize);
     }

@@ -4,7 +4,9 @@
  * Date: 2019-09-09 19:34
  * Description:
  */
-package cn.duoduo.vo;
+package cn.duoduo.vo.qingtaoke;
+
+import cn.duoduo.vo.EsGood;
 
 import java.io.Serializable;
 import java.util.List;

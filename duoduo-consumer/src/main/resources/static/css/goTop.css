@@ -1,0 +1,330 @@
+#kf5-support-btn {
+    display: none !important;
+}
+
+.kf5-supportBox {
+    height: 70% !important;
+    right: 20px !important;
+}
+
+.goTop {
+    position: fixed;
+    top: auto;
+    right: 3%;
+    bottom: 5%;
+    left: auto;
+    z-index: 1000;
+    width: 85px;
+    height: auto;
+    font-size: 18px;
+}
+
+.goTop ul {
+    overflow: hidden;
+    border-top: none;
+}
+
+.goTop ul li {
+    height: 48px;
+    line-height: 48px;
+    border-left: 2px solid #ff6600;
+    border-right: 2px solid #ff6600;
+    background-color: #FFF;
+    text-align: center !important;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.goTop ul li:hover {
+    background-color: #eee;
+}
+
+.goTop ul li:active {
+    background-color: #ddd;
+}
+
+.goTop ul li.goTopBtn {
+    height: 52px;
+    color: #FFF;
+    background-color: #ff6600;
+    border-bottom-left-radius: 43px;
+    border-bottom-right-radius: 43px;
+}
+
+.goTop ul li.goTopBtn p {
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+}
+
+.goTop ul li.goTopBtn p i {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    position: absolute;
+    top: auto;
+    right: 35px;
+    bottom: 0;
+    left: auto;
+    border-top-width: 10px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.goTop ul li.goTopBtn:hover {
+    border-left: 2px solid #ff4e00;
+    border-right: 2px solid #ff4e00;
+    background-color: #ff4e00;
+}
+
+.goTop ul li.goTopBtn:active {
+    border-left: 2px solid #d24000;
+    border-right: 2px solid #d24000;
+    background-color: #d24000;
+}
+
+.goTop-balloon {
+    height: 126px;
+    background-position: -14px -480px;
+}
+
+/*鍥炲埌椤堕儴3*/
+.goTopThree_new {
+    width: 44px;
+    position: fixed;
+    top: auto;
+    right: 0;
+    bottom: 60px;
+    left: auto;
+    /*overflow: hidden;*/
+    z-index: 200;
+    background: rgba(255, 255, 255, 1);
+    border: solid 1px rgba(234, 234, 234, 1);
+    border-radius: 2px;
+}
+
+.goTopThree_new ul {
+    position: relative;
+    /*border-radius: 2px;*/
+}
+
+.goTopThree_new ul .close-tips-btn {
+    width: 17px;
+    height: 17px;
+    background: url("@{oldStaticUrl}versions/version2016_11/images/icon1.png?v=20190314001") -440px -574px no-repeat;
+    position: absolute;
+    top: 40px;
+    right: 68px;
+    bottom: auto;
+    left: auto;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.goTopThree_new ul li {
+    font-size: 18px;
+    text-align: center !important;
+    line-height: 17px;
+    border-bottom: 1px solid rgba(234, 234, 234, 1);
+    transition: background-color .3s;
+    background: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.goTopThree_new ul li img.pc-wx-qr-code {
+    display: inline-block;
+    padding: 12px 0;
+}
+
+.goTopThree_new ul li .wx-qr-code-area {
+    position: absolute;
+    top: 0;
+    right: 46px;
+    bottom: auto;
+    left: auto;
+    width: 157px;
+    z-index: 10;
+    display: none;
+}
+
+.goTopThree_new ul li .wx-qr-code-area .inner {
+    width: 122px;
+    height: auto;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 10px 10px 8px;
+}
+
+.goTopThree_new ul li .wx-qr-code-area .inner div {
+    margin-top: 7px;
+    color: #8d8d8d;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+.goTopThree_new ul li a {
+    font-size: 12px;
+    color: #ecebeb;
+    height: 44px;
+    display: block;
+    text-decoration: none;
+}
+
+/* .goTopThree_new ul li i.go-top-icon {
+  width: 25px;
+  height: 14px;
+  display: inline-block;
+    background: url("http://www.qingtaoke.com/versions/version2016_11/images/icon1.png?v=20190314001") no-repeat;
+  background-position: -395px -149px;
+} */
+.goTopThree_new ul li.none-border {
+    border-bottom: none;
+}
+
+.goTopThree_new ul li:hover {
+    background-color: #4d4d4d;
+}
+
+.goTopThree_new ul li:hover a {
+    color: #fff;
+}
+
+.goTopThree_new ul li:hover .wx-qr-code-area {
+    display: block;
+}
+
+.goTopThree_new ul li:active {
+    background-color: #d24000;
+}
+
+.goTopThree_new ul li.go-top-btn:hover {
+    background-color: #494949;
+}
+
+.goTopThree_new ul li.pl-service-center {
+    width: 60px;
+    height: 91px;
+    background: url("@{oldStaticUrl}versions/version2016_11/images/icon1.png?v=20190314001") -418px -472px no-repeat;
+    border-bottom: none;
+    margin-left: -7px;
+    position: relative;
+}
+
+.goTopThree_new ul li.pl-service-center a {
+    width: 60px;
+    height: 33px;
+    padding: 58px 0 0 0;
+    color: #3e3e3e;
+    display: block;
+}
+
+.goTopThree_new ul li.pl-service-center .side-tips-area {
+    position: absolute;
+    top: 27px;
+    right: 41px;
+    bottom: auto;
+    left: auto;
+    width: 164px;
+    height: 96px;
+    padding: 10px 17px;
+    text-align: left;
+    cursor: default;
+    background: url("@{oldStaticUrl}versions/version2016_11/images/pl-service-icon1.png?v=20190314001") top center no-repeat;
+}
+
+.goTopThree_new ul li.pl-service-center .side-tips-area .title {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-left: 25px;
+}
+
+.goTopThree_new ul li.pl-service-center .side-tips-area .sub-tit {
+    width: 120px;
+    font-size: 14px;
+    color: #E76666;
+    line-height: 19px;
+    margin-top: 5px;
+    padding-left: 25px;
+}
+
+.goTopThree_new ul .gj-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+
+}
+
+.goTopThree_new ul .gj-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.goTopThree_new ul .gj-text-table {
+    display: none;
+
+}
+
+.goTopThree_new ul i {
+    font-style: normal;
+}
+
+.goTopThree_new ul i.go-top-icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-position: -87px -18px;
+    vertical-align: bottom;
+}
+
+.goTopThree_new ul i.feedback-icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-position: -59px -18px;
+    vertical-align: bottom;
+}
+
+.goTopThree_new ul i.customer-service-icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-position: -25px -18px;
+    vertical-align: bottom;
+}
+
+.goTopThree_new ul li .none-border {
+    border-bottom: none;
+}
+
+.goTopThree_new ul li:hover {
+    background: rgba(247, 89, 89, 1);
+}
+
+.goTopThree_new ul li:hover a {
+    color: #fff;
+}
+
+.goTopThree_new ul li:hover .gj-text-table {
+    display: table;
+}
+
+.goTopThree_new ul li:hover .gj-icon-table {
+    display: none;
+}
+
+.goTopThree_new ul li:hover i.go-top-icon {
+    background-position: -119px -18px;
+}
+
+.goTopThree_new ul li:hover:active {
+    background-color: #d24000;
+}
+
+.goTopThree_new ul li.go-top-btn:hover {
+    background: rgba(247, 89, 89, 1);
+}

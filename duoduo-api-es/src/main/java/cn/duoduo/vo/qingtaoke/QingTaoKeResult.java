@@ -4,10 +4,9 @@
  * Date: 2019-09-09 19:10
  * Description:
  */
-package cn.duoduo.vo;
+package cn.duoduo.vo.qingtaoke;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class QingTaoKeResult implements Serializable {
 

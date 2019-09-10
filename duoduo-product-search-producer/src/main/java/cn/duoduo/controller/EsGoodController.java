@@ -8,6 +8,9 @@ package cn.duoduo.controller;
 
 import cn.duoduo.service.EsGoodService;
 import cn.duoduo.vo.EsGood;
+import cn.duoduo.vo.PageFeign;
+import cn.duoduo.vo.qingtaoke.QingTaoKeSearch;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -34,6 +37,20 @@ public class EsGoodController {
     @GetMapping("/")
     public Object list() {
         return esGoodService.list();
+    }
+
+    @DeleteMapping("/all")
+    public int deleteAll() {
+        return this.esGoodService.deleteAll();
+    }
+
+    @PostMapping("/search")
+    public PageFeign<EsGood> search(@RequestBody QingTaoKeSearch qingTaoKeSearch
+            ,@RequestParam(value = "pageNum",defaultValue = "0") int pageNum
+            ,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize) {
+
+        Page<EsGood> search = this.esGoodService.search(qingTaoKeSearch,pageNum,pageSize);
+        return new PageFeign<EsGood>(search);
     }
 
 }

@@ -34,19 +34,19 @@ import java.util.List;
 @Service
 public class EsProductServiceImpl implements EsProductService {
 
-    @Resource
+    /*@Resource
     private ElasticsearchTemplate elasticsearchTemplate;
     @Autowired
-    private EsProductRepository esProductRepository;
+    private EsProductRepository esProductRepository;*/
     @Override
     public int save(EsProduct EsProduct) {
-        esProductRepository.save(EsProduct);
+        //esProductRepository.save(EsProduct);
         return 1;
     }
 
     @Override
     public int delete(int id) {
-        return 0;
+        return 1;
     }
 
     @Override
@@ -56,20 +56,21 @@ public class EsProductServiceImpl implements EsProductService {
 
     @Override
     public Object list() {
-        Iterable<EsProduct> all = esProductRepository.findAll();
-        return all;
+        //Iterable<EsProduct> all = esProductRepository.findAll();
+        return null;
     }
 
     @Override
     public Page<EsProduct> simpleSearch(String keyWord, int pageNum, int pageSize) {
-        PageRequest page = PageRequest.of(pageNum, pageSize);
+       /* PageRequest page = PageRequest.of(pageNum, pageSize);
         //return esProductRepository.findByTitleOrDescribe(keyWord,keyWord,keyWord,page);
-        return esProductRepository.findEsProductsByNameOrTitle(keyWord,keyWord,keyWord,page);
+        return esProductRepository.findEsProductsByNameOrTitle(keyWord,keyWord,keyWord,page);*/
+       return null;
     }
 
     @Override
     public Page<EsProduct> search(EsProductSearch esProductSearch, int pageNum, int pageSize) {
-        Pageable pageable= PageRequest.of(0,10);
+        Pageable pageable= PageRequest.of(pageNum,pageSize);
         NativeSearchQueryBuilder nativeSearchQueryBuilder=new NativeSearchQueryBuilder();
         nativeSearchQueryBuilder.withPageable(pageable);
 
@@ -142,9 +143,15 @@ public class EsProductServiceImpl implements EsProductService {
             nativeSearchQueryBuilder.withSort(SortBuilders.scoreSort().order(SortOrder.DESC));
 
 
-        Page<EsProduct> search = esProductRepository.search(build);
-        return  search;
+        //Page<EsProduct> search = esProductRepository.search(build);
+
+        return  null;
     }
 
+    /*public void getCatList() {
+        NativeSearchQueryBuilder nativeSearchQueryBuilder=new NativeSearchQueryBuilder();
+        nativeSearchQueryBuilder.addAggregation()
+    }
+*/
 
 }

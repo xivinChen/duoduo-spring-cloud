@@ -12,10 +12,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Component;
 
-@Component
-public interface EsProductRepository extends ElasticsearchRepository<EsProduct,Integer> {
+//@Component
+public interface EsProductRepository {
 
-    Page<EsProduct> findEsProductsByNameOrTitle(String name,String title,String keyWords,Pageable pageable);
+    /*Page<EsProduct> findEsProductsByNameOrTitle(String name,String title,String keyWords,Pageable pageable);
 
-    Page<EsProduct> findByTitleOrDescribe(String title, String describe, String keyWords, Pageable page);
+    Page<EsProduct> findByTitleOrDescribe(String title, String describe, String keyWords, Pageable page);*/
 }
