@@ -64,7 +64,7 @@
             <div class="iwrap">
                 <nav>
                     <a href="javascrip:;" class="no_color">
-                        轻淘客欢迎你！
+                        朵朵欢迎你！
                     </a>
                 </nav>
                 <nav>
@@ -80,7 +80,7 @@
                     <div class="middle-border-box">
                         <i class="middle-border"></i>
                     </div>
-                    <a href="/?r=userCenter/authList" target="_blank">我的推广</a>
+                    <a href="/?r=userCenter/authList" target="_blank">个人中心</a>
                     <!-- <dl>
                         <dt><a href="javascript:;" target="_blank">我的推广</a></dt>
                         <dd><a href="/?r=userCenter/authList" target="_blank">PID设置</a></dd>
@@ -92,12 +92,12 @@
                     <div class="middle-border-box">
                         <i class="middle-border"></i>
                     </div>
-                    <dl class="tuiguang_dl">
+                    <!--<dl class="tuiguang_dl">
                         <dt class="right_dt"><a href="/?r=index/chajian" target="_blank">推广神器</a></dt>
                         <dd><a href="/?r=index/chajian" target="_blank">轻淘客插件</a></dd>
                         <dd><a href="/?r=solution/platformIntroduce" target="_blank">CMS</a></dd>
                         <dd><a href="/openapi" target="_blank">开放API</a></dd>
-                    </dl>
+                    </dl>-->
                     <!--
                 <span>|</span>
                 <a href="" target="_blank">关于我们</a>
@@ -176,7 +176,7 @@
 
                 </div>
             </div> -->
-                <a class="home_chajian_icon" href="/chajian" target="_blank"></a>
+                <!--<a class="home_chajian_icon" href="/chajian" target="_blank"></a>-->
             </div>
         </div>
         <div class="home_header_bottom">
@@ -200,7 +200,7 @@
                        class="active">所有商品</a>
                 </div>
                 <div class="home_header_bottom_find">
-                <span class="find_more_text">
+                <!--<span class="find_more_text">
                  <a href="/goods-commend/sales">更多发现</a>
                 </span>
                     <div class="find_ul_box">
@@ -218,7 +218,7 @@
                                 <a href="/goods-commend/activity">活动款</a>
                             </li>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -238,59 +238,33 @@
         </div>
         <div class="goods-option-container">
             <div class="cat-container" id="cat-list">
-                <!--<a data-stat='{"action":"点击-全部", "category": "切换品类"}'
-                   class="cur"
-                   data-cat="0">全部<i>(48927)</i></a>
-                <a data-stat='{"action":"点击-女装", "category": "切换品类"}'
-                   class=""
-                   data-cat="10">女装<i>(3676)</i></a>
-                <a data-stat='{"action":"点击-内衣", "category": "切换品类"}'
-                   class=""
-                   data-cat="11">内衣<i>(2415)</i></a>
-                <a data-stat='{"action":"点击-男装", "category": "切换品类"}'
-                   class=""
-                   data-cat="12">男装<i>(3403)</i></a>
-                <a data-stat='{"action":"点击-母婴", "category": "切换品类"}'
-                   class=""
-                   data-cat="2">母婴<i>(6027)</i></a>
-                <a data-stat='{"action":"点击-美妆", "category": "切换品类"}'
-                   class=""
-                   data-cat="3">美妆<i>(3246)</i></a>
-                <a data-stat='{"action":"点击-居家", "category": "切换品类"}'
-                   class=""
-                   data-cat="4">居家<i>(11498)</i></a>
-                <a data-stat='{"action":"点击-鞋包配饰", "category": "切换品类"}'
-                   class=""
-                   data-cat="5">鞋包配饰<i>(6514)</i></a>
-                <a data-stat='{"action":"点击-美食", "category": "切换品类"}'
-                   class=""
-                   data-cat="6">美食<i>(5223)</i></a>
-                <a data-stat='{"action":"点击-文体", "category": "切换品类"}'
-                   class=""
-                   data-cat="7">文体<i>(3912)</i></a>
-                <a data-stat='{"action":"点击-家电数码", "category": "切换品类"}'
-                   class=""
-                   data-cat="8">家电数码<i>(2683)</i></a>-->
+
             </div>
             <div class="sort-more-container">
                 <div class="sort-container">
-                    <a data-stat='{"action":"点击-人气", "category": "排序"}' data-sort="sr"
-                       class="sort ">人气</a>
-                    <a data-stat='{"action":"点击-最新", "category": "排序"}' data-sort="sn"
+                    <a href="javascript:searchBySort('1')"
+                       class="sort">人气<span
+                            class="down"></span></a>
+                    <a href="javascript:searchBySort('2')"
                        class="sort ">最新<span
                             class="down"></span></a>
-                    <a data-stat='{"action":"点击-销量", "category": "排序"}' data-sort="ss"
+                    <a href="javascript:searchBySort('1')"
                        class="sort ">销量<span
                             class="down"></span></a>
-                    <a data-stat='{"action":"点击-价格", "category": "排序", "sort": "up"}' data-sort="sp"
+                    <a href="javascript:searchBySort('5')"
                        class="sort ">价格<span
                             class="up"></span></a>
-                    <a data-stat='{"action":"点击-佣金", "category": "排序"}' data-sort="syj"
-                       class="sort cur">佣金<span
+                    <a href="javascript:searchBySort('4')"
+                       class="sort ">价格<span
                             class="down"></span></a>
-                    <a data-stat='{"action":"点击-券金额", "category": "排序"}' data-sort="scp"
+
+                    <!--
+                    <a href="javascript:searchBySort('4')"
+                       class="sort cur">价格<span
+                            class="down"></span></a>
+                    <a href="javascript:searchBySort('1')"
                        class="sort ">券金额<span
-                            class="down"></span></a>
+                            class="down"></span></a>-->
                 </div>
                 <div class="more-container">
                     <div class="option-item-container">
@@ -464,23 +438,16 @@
     <div class="i-bottom-l">
         <div>
             <nav>
-                <a href="/top/2h" target="_blank">发现好货</a>
-                <a href="/goods/new" target="_blank">最新商品</a>
-                <a href="/top/2h" target="_blank">2小时销量榜</a>
-                <a href="/top/hot" target="_blank">实时爆款</a>
+                <a href="javascript:searchBySort('1')" >发现好货</a>
+                <a href="javascript:searchBySort('2')" >最新商品</a>
+                <a href="javascript:searchBySort('1')" >实时爆款</a>
             </nav>
             <nav>
-                <a href="http://www.qingtaoke.com/?r=index/chajian" target="_blank">推广神器</a>
-                <a href="http://www.qingtaoke.com/?r=index/chajian" target="_blank">插件</a>
-                <a href="http://www.qingtaoke.com/?r=solution/platformIntroduce" target="_blank">CMS</a>
-                <a href="http://www.qingtaoke.com/openapi" target="_blank">API</a>
-            </nav>
-            <nav>
-                <a href="http://www.qingtaoke.com" target="_blank">网站首页</a>
-                <a href="http://www.qingtaoke.com/fk/index?type=site" target="_blank">意见反馈</a>
+                <a href="http://localhost:8080" >网站首页</a>
+                <a href="http://localhost:8080" >意见反馈</a>
             </nav>
         </div>
-        <p>&copy; 2015-2019 轻淘客 Qingtaoke.com - 蜀ICP备15017427号-1</p>
+        <p>&copy; 2019- 朵朵商城 www.java1024.com - 粤ICP备125446号-1</p>
     </div></div>
 
 
@@ -618,7 +585,6 @@
         }
 
         $("#cat-list").html(cat_content);
-        console.log(data);
 
     }
 
@@ -653,26 +619,26 @@
                 "                        </a>\n" +
                 "                    </div>\n" +
                 "                    <div class=\"info-container\">\n" +
-                "                        <div class=\"yong-jing-container\">\n" +
+                "<div class=\"yong-jing-container\">\n" +
                 "                            <div class=\"value\">\n" +
-                "                                <div class=\"text\">赚取</div>\n" +
+                "                                <div class=\"text\"></div>\n" +
                 "                                <div class=\"money\">\n" +
-                "                                    &yen;10.43</div>\n" +
+                "                                    </div>\n" +
                 "                            </div>\n" +
                 "                            <div class=\"percent\">\n" +
-                "                                佣金比例&nbsp;70%\n" +
+                "                                \n" +
                 "                            </div>\n" +
                 "                        </div>\n" +
                 "                        <div class=\"title-container\">\n" +
-                "                            <a title=\"滇王驿古法液体红糖盒装300g\" target=\"_blank\" data-stat='{\"id\":\"g-l-title\"}'\n" +
-                "                               href=\"/goods/index?goodsid=576232309752\">"+data.content[i].goods_title+"</a>\n" +
+                "                            <a title=\""+data.content[i].goods_short_title+"\" target=\"_blank\" data-stat='{\"id\":\"g-l-title\"}'\n" +
+                "                               href=\"/goods/index?goodsid=576232309752\">"+data.content[i].goods_short_title+"</a>\n" +
                 "                        </div>\n" +
                 "                        <div class=\"price-container\">\n" +
                 "                            <div class=\"price\">\n" +
                 "                                <div class=\"text\">到手价</div>\n" +
-                "                                <div class=\"money\">&yen;&nbsp;14.9</div>\n" +
+                "                                <div class=\"money\">&yen;&nbsp;"+data.content[i].goods_price+"</div>\n" +
                 "                            </div>\n" +
-                "                            <div class=\"sale\">月销&nbsp;199</div>\n" +
+                "                            <div class=\"sale\">月销&nbsp;"+data.content[i].goods_sales+"</div>\n" +
                 "                        </div>\n" +
                 "                        <div class=\"icon-container\">\n" +
                 "                            <div class=\"tag-container\">\n" +
@@ -688,15 +654,15 @@
                 "                    <div class=\"extension-container\">\n" +
                 "                        <div class=\"line\">\n" +
                 "                            <i class=\"quan\"></i>\n" +
-                "                            <div class=\"text\">券剩余&nbsp;4683&nbsp;张</div>\n" +
+                "                            <div class=\"text\">券剩余&nbsp;"+data.content[i].coupon_number+"&nbsp;张</div>\n" +
                 "                        </div>\n" +
                 "                        <div class=\"line\">\n" +
                 "                            <i class=\"shop\"></i>\n" +
-                "                            <div class=\"text\">滇王驿食品旗舰店</div>\n" +
+                "                            <div class=\"text\">"+data.content[i].seller_id+"</div>\n" +
                 "                        </div>\n" +
                 "                        <div class=\"line\">\n" +
                 "                            <i class=\"time\"></i>\n" +
-                "                            <div class=\"text\">9月4日&nbsp;上架</div>\n" +
+                "                            <div class=\"text\">"+data.content[i].coupon_start_time+"&nbsp;上架</div>\n" +
                 "                        </div>\n" +
                 "                        <div class=\"line\">\n" +
                 "                            <i class=\"jubao\"></i>\n" +
@@ -710,8 +676,8 @@
                 "                        <img class=\"media-small-pic\"\n" +
                 "                             data-src=\"http://imgproxy.qingtaoke.com/imgextra/i4/2361040885/*o1*c*n01*mna*w*r*t1*i*p*n11w*e*o*v1_!!2361040885.jpg\">\n" +
                 "                        <br/>\n" +
-                "                        滇王驿古法液体红糖盒装300g            <br/>\n" +
-                "                        到手价【14.9元】包邮秒杀\n" +
+                "                        "+data.content[i].title+"           <br/>\n" +
+                "                        到手价【"+data.content[i].goods_price+"元】包邮秒杀\n" +
                 "                        <br/>\n" +
                 "                        优惠券：https://uland.taobao.com/quan/detail?sellerId=2361040885&activityId=025080a4a1264a37a5c020de6a7db8a6                <br/>\n" +
                 "                        商品地址：https://detail.tmall.com/item.htm?id=576232309752            <br/>\n" +
@@ -719,13 +685,11 @@
                 "                </div>\n" +
                 "            </div>"
 
-            /*content+="<li> <label><input name='artCtgId' type='radio' value='"+data[i].ctgId+"'>"
-                +data[i].ctgName+" <em class='hidden-md'>( 栏目ID: <span>"+data[i].ctgId+"</span> )</em></label></li>";*/
         }
         $("#my-goods-list").html(content);
-        console.log(data);
     };
 
+    //获取所有分类
     $.get(
         "./es_good/cat/list",
         function (data) {
@@ -739,12 +703,24 @@
     var searchByKW=function(key_word) {
         //alert(key_word);
         $.post(
-          "./es_good/search?key_word="+key_word,
-          function (data) {
-              fillGoods(data);
-              $('.search-key-word').value(key_word);
-          },
-          "json"
+            "./es_good/search?key_word="+key_word,
+            function (data) {
+                fillGoods(data);
+                $('.search-key-word').value(key_word);
+            },
+            "json"
+        );
+    }
+
+    //过滤
+    var searchBySort=function(sort) {
+        //alert(sort);
+        $.post(
+            "./es_good/search?sort="+sort,
+            function (data) {
+                fillGoods(data);
+            },
+            "json"
         );
     }
 

@@ -103,11 +103,14 @@ public class EsGoodServiceImpl implements EsGoodService {
         List<GoodCat> result=new ArrayList<>();
         List<LongTerms.Bucket> buckets = terms.getBuckets();
         Iterator<LongTerms.Bucket> iterator=buckets.iterator();
+        int num=0;
         while (iterator.hasNext()) {
+            num++;
+            LongTerms.Bucket next = iterator.next();
             GoodCat goodCat=new GoodCat();
-            Integer id=iterator.next().getKeyAsNumber().intValue();
+            Integer id=next.getKeyAsNumber().intValue();
             goodCat.setId(id);
-            goodCat.setNumber(iterator.next().getDocCount());
+            goodCat.setNumber(next.getDocCount());
             String name="";
             switch (id) {
                 case 0:
@@ -150,7 +153,7 @@ public class EsGoodServiceImpl implements EsGoodService {
             goodCat.setName(name);
             result.add(goodCat);
         }
-
+        System.out.println("num:"+num);
 
         return  result;
     }
