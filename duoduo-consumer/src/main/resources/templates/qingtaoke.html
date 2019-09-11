@@ -237,8 +237,8 @@
         <div class="selected-option-container">
         </div>
         <div class="goods-option-container">
-            <div class="cat-container">
-                <a data-stat='{"action":"点击-全部", "category": "切换品类"}'
+            <div class="cat-container" id="cat-list">
+                <!--<a data-stat='{"action":"点击-全部", "category": "切换品类"}'
                    class="cur"
                    data-cat="0">全部<i>(48927)</i></a>
                 <a data-stat='{"action":"点击-女装", "category": "切换品类"}'
@@ -270,7 +270,7 @@
                    data-cat="7">文体<i>(3912)</i></a>
                 <a data-stat='{"action":"点击-家电数码", "category": "切换品类"}'
                    class=""
-                   data-cat="8">家电数码<i>(2683)</i></a>
+                   data-cat="8">家电数码<i>(2683)</i></a>-->
             </div>
             <div class="sort-more-container">
                 <div class="sort-container">
@@ -605,6 +605,22 @@
 
 <script type="text/javascript">
 
+    var fillCats=function (data) {
+        //alert(data.length);
+        cat_content="";
+        for(var i=0;i<data.length;i++) {
+            cat_content+="<a href='javascript:getGoodsByCat("+data[i].id+")'\n" +
+                "                   class=\"\"\n" +
+                "                   data-cat=\""+data[i].id+"\">"+data[i].name+"<i>("+data[i].number+")</i></a>";
+            /*cat_content+="<a data-stat='{\"action\":\"点击-"+data[i].name+"\", \"category\": \"切换品类\"}'\n" +
+                "                   class=\"\"\n" +
+                "                   data-cat=\""+data[i].id+"\">"+data[i].name+"<i>("+data[i].number+")</i></a>";*/
+        }
+
+        $("#cat-list").html(cat_content);
+        console.log(data);
+
+    }
 
     //把后端返回的json格式填充到页面
     var fillGoods=function(data) {
@@ -710,6 +726,15 @@
         console.log(data);
     };
 
+    $.get(
+        "./es_good/cat/list",
+        function (data) {
+            //alert(data)
+            fillCats(data);
+        },
+        "json"
+    );
+
     //关键词查询方法
     var searchByKW=function(key_word) {
         //alert(key_word);
@@ -725,7 +750,7 @@
 
     var searchbyKWWithP=function(page) {
 
-        alert(page);
+        //alert(page);
         var key_word=$(".search-key-word").val();
         alert(key_word);
         $.post(
@@ -734,6 +759,18 @@
               //alert(data)
               fillGoods(data);
           },
+            "json"
+        );
+    }
+
+    //根据类别查询商品信息信息
+    var getGoodsByCat=function(goods_cat) {
+        $.get(
+            "./es_good/listByCat?goods_cat="+goods_cat,
+            function (data) {
+                //alert(data)
+                fillGoods(data);
+            },
             "json"
         );
     }
@@ -761,7 +798,7 @@
 
 
    //默认 加载商品 信息
-    alert("初始化！！");
+    //alert("初始化！！");
     $.post(
         "./es_good/search",
         function(data) {

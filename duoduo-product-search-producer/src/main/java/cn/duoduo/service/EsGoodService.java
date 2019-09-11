@@ -7,6 +7,7 @@
 package cn.duoduo.service;
 
 import cn.duoduo.vo.EsGood;
+import cn.duoduo.vo.GoodCat;
 import cn.duoduo.vo.qingtaoke.QingTaoKeSearch;
 import org.springframework.data.domain.Page;
 
@@ -20,6 +21,10 @@ public interface EsGoodService {
     int deleteAll();
 
     Page<EsGood> search(QingTaoKeSearch qingTaoKeSearch, int pageNum, int pageSize);
+
+    public List<GoodCat> findCatList();
+
+    public Page<EsGood> findByCat(Integer goods_cat,int page,int pageSize);
 
 
 

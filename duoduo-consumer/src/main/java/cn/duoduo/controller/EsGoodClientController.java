@@ -8,6 +8,7 @@ package cn.duoduo.controller;
 
 import cn.duoduo.service.EsGoodClientService;
 import cn.duoduo.vo.EsGood;
+import cn.duoduo.vo.GoodCat;
 import cn.duoduo.vo.PageFeign;
 import cn.duoduo.vo.qingtaoke.QingTaoKeSearch;
 import com.alibaba.fastjson.JSON;
@@ -86,5 +87,20 @@ public class EsGoodClientController {
             , @RequestParam(value = "pageSize",defaultValue = "20") int pageSize) {
 
         return this.esGoodClientService.search(qingTaoKeSearch,pageNum,pageSize);
+    }
+
+    @GetMapping("/cat/list")
+    public List<GoodCat> findCatList() {
+        return this.esGoodClientService.getCatsList();
+    }
+
+    @GetMapping("/listByCat")
+    public PageFeign<EsGood> listByCat(@RequestParam("goods_cat") Integer goods_cat
+            ,@RequestParam(value = "page",defaultValue = "0") int page
+            ,@RequestParam(value = "pageSize",defaultValue = "20") int pageSize) {
+
+        return this.esGoodClientService.listByCat(goods_cat, page, pageSize);
+
+
     }
 }

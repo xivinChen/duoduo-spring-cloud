@@ -6,36 +6,49 @@
  */
 package cn.duoduo.service.impl;
 
+import cn.duoduo.enums.good.GoodCatEnum;
 import cn.duoduo.enums.good.GoodSortEnum;
 import cn.duoduo.repository.EsGoodRepository;
 import cn.duoduo.service.EsGoodService;
 import cn.duoduo.vo.EsGood;
-import cn.duoduo.vo.EsProduct;
+import cn.duoduo.vo.GoodCat;
 import cn.duoduo.vo.qingtaoke.QingTaoKeSearch;
+import io.swagger.models.auth.In;
+import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.common.lucene.search.function.FunctionScoreQuery;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.functionscore.FunctionScoreQueryBuilder;
 import org.elasticsearch.index.query.functionscore.ScoreFunctionBuilders;
+import org.elasticsearch.search.aggregations.Aggregation;
+import org.elasticsearch.search.aggregations.AggregationBuilders;
+import org.elasticsearch.search.aggregations.Aggregations;
+import org.elasticsearch.search.aggregations.bucket.terms.InternalTerms;
+import org.elasticsearch.search.aggregations.bucket.terms.LongTerms;
+import org.elasticsearch.search.aggregations.bucket.terms.StringTerms;
 import org.elasticsearch.search.sort.SortBuilders;
 import org.elasticsearch.search.sort.SortOrder;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
+import org.springframework.data.elasticsearch.core.query.SearchQuery;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+
 @Service
 public class EsGoodServiceImpl implements EsGoodService {
 
     @Resource
     private EsGoodRepository esGoodRepository;
+
+    @Resource
+    private ElasticsearchTemplate elasticsearchTemplate;
 
     @Override
     public int saveOne(EsGood esGood) {
@@ -50,6 +63,14 @@ public class EsGoodServiceImpl implements EsGoodService {
     }
 
     @Override
+    public Page<EsGood> findByCat(Integer goods_cat,int page,int pageSize) {
+        Pageable pageable=PageRequest.of(page,pageSize);
+        SearchQuery query=new NativeSearchQueryBuilder().withPageable(pageable).withQuery(QueryBuilders.termQuery("goods_cat",goods_cat)).build();
+        //NativeSearchQuery query = new NativeSearchQueryBuilder().withQuery(QueryBuilders.boolQuery().must(QueryBuilders.termQuery("goods_cat", goods_cat))).build();
+        return esGoodRepository.search(query);
+    }
+
+    @Override
     public int saveAll(List<EsGood> list) {
 
         Iterable<EsGood> esGoods = esGoodRepository.saveAll(list);
@@ -60,6 +81,78 @@ public class EsGoodServiceImpl implements EsGoodService {
             iterator.next();
         }
         return result;
+    }
+
+    @Override
+    public List<GoodCat> findCatList() {
+
+        SearchQuery build = new NativeSearchQueryBuilder().withQuery(QueryBuilders.matchAllQuery())
+                .withIndices("goods").withTypes("goods")
+                .withSearchType(SearchType.QUERY_THEN_FETCH)
+                .addAggregation(AggregationBuilders.terms("goods_cat").field("goods_cat")).build();
+
+        Aggregations aggregations = elasticsearchTemplate.query(build, searchResponse -> searchResponse.getAggregations());
+        Map<String, Aggregation> map=aggregations.asMap();
+        LongTerms terms=(LongTerms) map.get("goods_cat");
+        /*Map<String,Long> bucket=terms.getBuckets().stream().collect(Collectors.toMap(
+                StringTerms.Bucket::getKeyAsString,
+                InternalTerms.Bucket::getDocCount,
+                (x,y)->x)
+        );*/
+
+        List<GoodCat> result=new ArrayList<>();
+        List<LongTerms.Bucket> buckets = terms.getBuckets();
+        Iterator<LongTerms.Bucket> iterator=buckets.iterator();
+        while (iterator.hasNext()) {
+            GoodCat goodCat=new GoodCat();
+            Integer id=iterator.next().getKeyAsNumber().intValue();
+            goodCat.setId(id);
+            goodCat.setNumber(iterator.next().getDocCount());
+            String name="";
+            switch (id) {
+                case 0:
+                    name= GoodCatEnum._0ALL;
+                    break;
+                case 2:
+                    name=GoodCatEnum._2MU_YING;
+                    break;
+                case 3:
+                    name=GoodCatEnum._3MEI_ZHUANG;
+                    break;
+                case 4:
+                    name=GoodCatEnum._4JIA_JU;
+                    break;
+                case 5:
+                    name=GoodCatEnum._5BAO_XIE;
+                    break;
+                case 6:
+                    name=GoodCatEnum._6MEI_SHI;
+                    break;
+                case 7:
+                    name=GoodCatEnum._7WEN_TI;
+                    break;
+                case 8:
+                    name=GoodCatEnum._8DIAN_SHU_MA;
+                    break;
+                case 9:
+                    name=GoodCatEnum._9OTHER;
+                    break;
+                case 10:
+                    name=GoodCatEnum._10NV_ZHUANG;
+                    break;
+                case 11:
+                    name=GoodCatEnum._11NEI_YI;
+                    break;
+                case 12:
+                    name=GoodCatEnum._12NAN_ZHUANG;
+                    break;
+            }
+            goodCat.setName(name);
+            result.add(goodCat);
+        }
+
+
+        return  result;
     }
 
     @Override

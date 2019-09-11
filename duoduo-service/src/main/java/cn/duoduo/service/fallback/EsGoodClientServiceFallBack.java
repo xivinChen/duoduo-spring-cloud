@@ -40,6 +40,16 @@ public class EsGoodClientServiceFallBack implements FallbackFactory<EsGoodClient
                 System.err.println("hysrix");
                 return null;
             }
+
+            @Override
+            public List getCatsList() {
+                return null;
+            }
+
+            @Override
+            public PageFeign<EsGood> listByCat(Integer goods_cat, int page, int pageSize) {
+                return null;
+            }
         };
     }
 }

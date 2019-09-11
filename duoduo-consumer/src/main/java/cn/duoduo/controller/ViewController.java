@@ -51,11 +51,11 @@ public class ViewController {
 
     @RequestMapping("/")
     public ModelAndView index() {
-        ModelAndView modelAndView=new ModelAndView("product");
+        ModelAndView modelAndView=new ModelAndView("qingtaoke");
         //EsProductSearch esProductSearch=new EsProductSearch();
         //esProductSearch.setKeyWord("荣耀");
-        PageFeign<EsProduct> list = this.esProductClientService.testSearch();
-        modelAndView.addObject("products",list);
+        /*PageFeign<EsProduct> list = this.esProductClientService.testSearch();
+        modelAndView.addObject("products",list);*/
         return modelAndView;
     }
 
@@ -92,7 +92,7 @@ public class ViewController {
         return esGoods;
     }
 
-    @RequestMapping("/qingtaoke")
+    @RequestMapping("/qingtaoke.html")
     public ModelAndView qingtaoke() {
         return new ModelAndView("qingtaoke");
     }

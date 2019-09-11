@@ -8,6 +8,7 @@ package cn.duoduo.controller;
 
 import cn.duoduo.service.EsGoodService;
 import cn.duoduo.vo.EsGood;
+import cn.duoduo.vo.GoodCat;
 import cn.duoduo.vo.PageFeign;
 import cn.duoduo.vo.qingtaoke.QingTaoKeSearch;
 import org.springframework.data.domain.Page;
@@ -51,6 +52,21 @@ public class EsGoodController {
 
         Page<EsGood> search = this.esGoodService.search(qingTaoKeSearch,pageNum,pageSize);
         return new PageFeign<EsGood>(search);
+    }
+
+    @GetMapping("/cat/list")
+    public List<GoodCat> findCatList() {
+        return this.esGoodService.findCatList();
+    }
+
+    @GetMapping("/listByCat")
+    public PageFeign<EsGood> listByCat(@RequestParam("goods_cat") Integer goods_cat
+            ,@RequestParam(value = "page",defaultValue = "0") int page
+            ,@RequestParam(value = "pageSize",defaultValue = "20") int pageSize) {
+
+        Page<EsGood> byCat = this.esGoodService.findByCat(goods_cat, page, pageSize);
+        return new PageFeign<EsGood>(byCat);
+
     }
 
 }

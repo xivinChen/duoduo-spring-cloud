@@ -34,4 +34,12 @@ public interface EsGoodClientService {
     @PostMapping("/es_good/search/")
     PageFeign<EsGood> search(@RequestBody QingTaoKeSearch qingTaoKeSearch,
                              @RequestParam("pageNum") int pageNum,@RequestParam("pageSize") int pageSize);
+
+    @GetMapping("/es_good/cat/list")
+    List getCatsList();
+
+    @GetMapping("/es_good/listByCat")
+    PageFeign<EsGood> listByCat(@RequestParam("goods_cat") Integer goods_cat
+            ,@RequestParam(value = "page",defaultValue = "0") int page
+            ,@RequestParam(value = "pageSize",defaultValue = "20") int pageSize);
 }
