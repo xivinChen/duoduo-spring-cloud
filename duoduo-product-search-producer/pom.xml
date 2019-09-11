@@ -88,6 +88,11 @@
             <groupId>cn.duoduo</groupId>
             <artifactId>duoduo-service</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.duoduo</groupId>
+            <artifactId>duoduo-redis</artifactId>
+        </dependency>
+
     </dependencies>
 
 

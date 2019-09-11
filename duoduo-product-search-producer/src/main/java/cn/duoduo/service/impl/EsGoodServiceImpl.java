@@ -14,6 +14,9 @@ import cn.duoduo.vo.EsGood;
 import cn.duoduo.vo.GoodCat;
 import cn.duoduo.vo.qingtaoke.QingTaoKeSearch;
 import io.swagger.models.auth.In;
+import org.elasticsearch.action.admin.indices.analyze.AnalyzeAction;
+import org.elasticsearch.action.admin.indices.analyze.AnalyzeRequestBuilder;
+import org.elasticsearch.action.admin.indices.analyze.AnalyzeResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.common.lucene.search.function.FunctionScoreQuery;
 import org.elasticsearch.index.query.BoolQueryBuilder;
@@ -28,6 +31,7 @@ import org.elasticsearch.search.aggregations.bucket.terms.LongTerms;
 import org.elasticsearch.search.aggregations.bucket.terms.StringTerms;
 import org.elasticsearch.search.sort.SortBuilders;
 import org.elasticsearch.search.sort.SortOrder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -35,6 +39,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.data.elasticsearch.core.query.SearchQuery;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -44,11 +49,41 @@ import java.util.*;
 @Service
 public class EsGoodServiceImpl implements EsGoodService {
 
+    /*@Resource
+    private RedisTemplate redisTemplate;*/
+
     @Resource
     private EsGoodRepository esGoodRepository;
 
     @Resource
     private ElasticsearchTemplate elasticsearchTemplate;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    @Override
+    public List<String> getIkResult(String key_word,String ikAnalyze) {
+
+        AnalyzeRequestBuilder ikRequest = new AnalyzeRequestBuilder(elasticsearchTemplate.getClient(), AnalyzeAction.INSTANCE, "goods", key_word);
+        ikRequest.setTokenizer(ikAnalyze);
+        List<AnalyzeResponse.AnalyzeToken> tokens = ikRequest.execute().actionGet().getTokens();
+        List<String> searchTermList = new ArrayList<>();
+        tokens.forEach(ikToken -> {
+            if(ikToken.getTerm().length()==2) {
+                redisTemplate.opsForZSet().incrementScore("key_word",ikToken.getTerm(),+1);
+                searchTermList.add(ikToken.getTerm());
+
+            }
+        });
+        return searchTermList;
+    }
+
+    @Override
+    public Object getReMenCi() {
+        Set key_word = redisTemplate.opsForZSet().reverseRange("key_word", 0, 9);
+        System.out.println(key_word);
+        return key_word;
+    }
 
     @Override
     public int saveOne(EsGood esGood) {

@@ -69,4 +69,14 @@ public class EsGoodController {
 
     }
 
+    @GetMapping("/ik_result")
+    public List<String> ikResult(String key_word,String ikAnalyze) {
+        return this.esGoodService.getIkResult(key_word,ikAnalyze);
+    }
+
+    @GetMapping("/get_re_men")
+    public Object getReMenCi() {
+        return this.esGoodService.getReMenCi();
+    }
+
 }

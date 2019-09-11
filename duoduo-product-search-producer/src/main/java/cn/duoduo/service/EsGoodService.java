@@ -26,6 +26,9 @@ public interface EsGoodService {
 
     public Page<EsGood> findByCat(Integer goods_cat,int page,int pageSize);
 
+    public List<String> getIkResult(java.lang.String key_word, java.lang.String ikAnalyze);
+    public Object getReMenCi();
+
 
 
 }
