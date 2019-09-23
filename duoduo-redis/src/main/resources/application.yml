@@ -1,0 +1,64 @@
+server:
+  port: 8099
+spring:
+  application:
+    name: bs-ccr-redis
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/duoduo?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123zxc
+
+  quartz:
+    #数据库方式
+    job-store-type: jdbc
+      #初始化表结构
+    #jdbc:
+      #initialize-schema: NEVER
+    #相关属性配置
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: DefaultQuartzScheduler
+            instanceId: AUTO
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 5
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            #            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            tablePrefix: QRTZ_
+  #            isClustered: true
+  #            clusterCheckinInterval: 10000
+  #            useProperties: false
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123zxc
+    database: 0
+    lettuce:
+      pool:
+        max-active: 32
+        max-wait: 300ms
+        max-idle: 16
+        min-idle: 8
+
+jobGroup: userTimeJobGroup
+triggerGroup: userTimeTriggerGroup
+cron: 0 0/1 * * * ?
+
+
+
+
+
+
