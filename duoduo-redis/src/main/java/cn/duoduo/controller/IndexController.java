@@ -4,7 +4,7 @@
  * Date: 2019-09-17 14:38
  * Description:
  */
-package cn.duoduo.config.controller;
+package cn.duoduo.controller;
 
 import cn.duoduo.job.HelloJob;
 import org.quartz.*;

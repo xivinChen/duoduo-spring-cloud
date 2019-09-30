@@ -1,0 +1,35 @@
+server:
+  port: 8200
+
+
+spring:
+  schedulerx2:
+    endpoint: acm.aliyun.com
+    namespace: 22c16fb2-faa1-4c49-9645-38ae59c76c6d
+    group-id: ec569d2f-265b-4797-9de3-026ba38bb740 #测试组id
+    #group-id: alibaba-springboot-demo-group # edas环境只需要配置groupId
+  cloud:
+
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  application:
+    name: schedule-provideer
+
+regionId: cn-hangzhou
+
+accessKeyId: LTAIEBWhTbhsWByO
+  #鉴权使用的 Access Key Secret
+accessKeySecret: FXqHcqjJMPftFuMjH1HOZeGpAGZ7Ko
+  #产品名称
+productName: schedulerx2
+  #参见支持地域列表，选择 Domain
+domain: schedulerx.cn-hangzhou.aliyuncs.com
+
+namespace: 0055acd5-2ffd-4196-ae2a-b3f52f8e604c
+groupId: alibaba-springboot-demo-group
+
+
+
+

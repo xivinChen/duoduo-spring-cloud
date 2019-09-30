@@ -10,31 +10,7 @@ spring:
     username: root
     password: 123zxc
 
-  quartz:
-    #数据库方式
-    job-store-type: jdbc
-      #初始化表结构
-    #jdbc:
-      #initialize-schema: NEVER
-    #相关属性配置
-    properties:
-      org:
-        quartz:
-          scheduler:
-            instanceName: DefaultQuartzScheduler
-            instanceId: AUTO
-          threadPool:
-            class: org.quartz.simpl.SimpleThreadPool
-            threadCount: 5
-            threadPriority: 5
-            threadsInheritContextClassLoaderOfInitializingThread: true
-          jobStore:
-            class: org.quartz.impl.jdbcjobstore.JobStoreTX
-            #            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
-            tablePrefix: QRTZ_
-  #            isClustered: true
-  #            clusterCheckinInterval: 10000
-  #            useProperties: false
+
 
   cloud:
     nacos:
@@ -56,6 +32,8 @@ spring:
 jobGroup: userTimeJobGroup
 triggerGroup: userTimeTriggerGroup
 cron: 0 0/1 * * * ?
+
+redisScriptPath: script/incrementScore.lua
 
 
 

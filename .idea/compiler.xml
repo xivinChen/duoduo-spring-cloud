@@ -12,6 +12,7 @@
         <module name="duoduo-product-search-producer" />
         <module name="duoduo-swagger-ui" />
         <module name="duoduo-user-producer" />
+        <module name="scheduleX" />
         <module name="duoduo-admin-producer" />
         <module name="duoduo-api" />
         <module name="duoduo-tx-manager" />
@@ -33,6 +34,7 @@
       <module name="duoduo-swagger-ui" target="1.8" />
       <module name="duoduo-tx-manager" target="1.8" />
       <module name="duoduo-user-producer" target="1.8" />
+      <module name="scheduleX" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
