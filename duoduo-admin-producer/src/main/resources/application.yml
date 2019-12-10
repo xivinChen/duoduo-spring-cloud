@@ -16,8 +16,14 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+
+    alibaba:
+      seata:
+        tx-service-group: duoduo-admin-producer-group
   transaction:
     rollback-on-commit-failure: true
+  main:
+    allow-bean-definition-overriding: true
 
 tx-lcn:
   client:

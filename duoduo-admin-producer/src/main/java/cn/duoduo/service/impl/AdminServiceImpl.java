@@ -12,6 +12,7 @@ import cn.duoduo.service.UserClientService;
 import cn.duoduo.vo.Admin;
 import cn.duoduo.vo.User;
 import com.codingapi.txlcn.tc.annotation.TccTransaction;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,7 +41,9 @@ public class AdminServiceImpl implements AdminService {
 
     }
 
-    @TccTransaction(confirmMethod = "saveConfirm",cancelMethod = "saveCancel")
+    //@TccTransaction(confirmMethod = "saveConfirm",cancelMethod = "saveCancel")
+    @GlobalTransactional
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public int saveAdminAndUser(User user,Admin admin) {
 

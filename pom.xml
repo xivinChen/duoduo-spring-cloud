@@ -21,6 +21,14 @@
         <module>duoduo-tx-manager</module>
         <module>duoduo-redis</module>
         <module>scheduleX</module>
+        <module>test-git</module>
+        <module>service-1</module>
+        <module>service-2</module>
+        <module>duoduo-open-search</module>
+        <module>duoduo-boot-admin</module>
+        <module>duoduo-discovery-demo</module>
+        <module>proxy-demo</module>
+        <module>duoduo-proxy-demo</module>
     </modules>
 
 

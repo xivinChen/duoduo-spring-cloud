@@ -5,9 +5,13 @@
       <module fileurl="file://$PROJECT_DIR$/duoduo-admin-producer/duoduo-admin-producer.iml" filepath="$PROJECT_DIR$/duoduo-admin-producer/duoduo-admin-producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/duoduo-api/duoduo-api.iml" filepath="$PROJECT_DIR$/duoduo-api/duoduo-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/duoduo-api-es/duoduo-api-es.iml" filepath="$PROJECT_DIR$/duoduo-api-es/duoduo-api-es.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-boot-admin/duoduo-boot-admin.iml" filepath="$PROJECT_DIR$/duoduo-boot-admin/duoduo-boot-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/duoduo-consumer/duoduo-consumer.iml" filepath="$PROJECT_DIR$/duoduo-consumer/duoduo-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-discovery-demo/duoduo-discovery-demo.iml" filepath="$PROJECT_DIR$/duoduo-discovery-demo/duoduo-discovery-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-open-search/duoduo-open-search.iml" filepath="$PROJECT_DIR$/duoduo-open-search/duoduo-open-search.iml" />
       <module fileurl="file://$PROJECT_DIR$/duoduo-product-analyse-producer/duoduo-product-analyse-producer.iml" filepath="$PROJECT_DIR$/duoduo-product-analyse-producer/duoduo-product-analyse-producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/duoduo-product-search-producer/duoduo-product-search-producer.iml" filepath="$PROJECT_DIR$/duoduo-product-search-producer/duoduo-product-search-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/duoduo-proxy-demo/duoduo-proxy-demo.iml" filepath="$PROJECT_DIR$/duoduo-proxy-demo/duoduo-proxy-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/duoduo-redis/duoduo-redis.iml" filepath="$PROJECT_DIR$/duoduo-redis/duoduo-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/duoduo-service/duoduo-service.iml" filepath="$PROJECT_DIR$/duoduo-service/duoduo-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/duoduo-spring-cloud.iml" filepath="$PROJECT_DIR$/duoduo-spring-cloud.iml" />
@@ -15,6 +19,9 @@
       <module fileurl="file://$PROJECT_DIR$/duoduo-tx-manager/duoduo-tx-manager.iml" filepath="$PROJECT_DIR$/duoduo-tx-manager/duoduo-tx-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/duoduo-user-producer/duoduo-user-producer.iml" filepath="$PROJECT_DIR$/duoduo-user-producer/duoduo-user-producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/scheduleX/scheduleX.iml" filepath="$PROJECT_DIR$/scheduleX/scheduleX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-1/service1.iml" filepath="$PROJECT_DIR$/service-1/service1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-2/service2.iml" filepath="$PROJECT_DIR$/service-2/service2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-git/testgit.iml" filepath="$PROJECT_DIR$/test-git/testgit.iml" />
     </modules>
   </component>
 </project>

@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
+import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
@@ -18,6 +19,7 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.Method;
 import java.time.Duration;
 
 /**
@@ -38,6 +40,12 @@ public class RedisConfig extends CachingConfigurerSupport {
         this.timeToLive = timeToLive;
     }
 
+
+    @Override
+    @Bean
+    public KeyGenerator keyGenerator() {
+        return new CacheKeyGenerator();
+    }
 
     @Bean
     public CacheManager cacheManager(RedisConnectionFactory factory) {

@@ -6,7 +6,7 @@
  */
 package cn.duoduo.servcie.impl;
 
-import cn.duoduo.servcie.UserService;
+/*import cn.duoduo.servcie.UserService;
 import cn.duoduo.vo.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,4 +29,4 @@ public class UserConfirmServiceImpl implements UserService {
     public User get(int id) {
         return null;
     }
-}
+}*/

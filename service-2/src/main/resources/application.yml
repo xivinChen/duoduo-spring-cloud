@@ -1,0 +1,18 @@
+server:
+  port: 6300
+mybatis:
+  mapper-locations:
+    - classpath:mapping/*.xml
+spring:
+  application:
+    name: duoduo-service2
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+redisScriptPath: script/incrementScore.lua
+logging:
+  level:
+    io:
+      seata: debug

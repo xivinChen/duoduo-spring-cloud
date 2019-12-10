@@ -1,0 +1,64 @@
+server:
+  port: 6100
+mybatis:
+  mapper-locations:
+    - classpath:mapping/*.xml
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/duoduo?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123zxc
+  application:
+    name: duoduo-service1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alibaba:
+      seata:
+        tx-service-group: duoduo-user-producer-group
+
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123zxc
+    database: 0
+    lettuce:
+      pool:
+        max-active: 32
+        max-wait: 300ms
+        max-idle: 16
+        min-idle: 8
+  main:
+    allow-bean-definition-overriding: true
+redisScriptPath: script/incrementScore.lua
+
+aluser:
+  accessKey: LTAI4FipRPK3htsT54j4ahZa
+  secretKey: Oz9fRDjndnfTWMlBCcw8mVkm2Z0xQV
+
+#Alibaba jetcache
+jetcache:
+  statIntervalMinutes: 15
+  areaInCacheName: false
+  local:
+    default:
+      type: linkedhashmap
+      keyConvertor: fastjson
+  remote:
+    default:
+      type: redis
+      keyConvertor: fastjson
+      valueEncoder: java
+      valueDecoder: java
+      poolConfig:
+        minIdle: 5
+        maxIdle: 20
+        maxTotal: 50
+      host: 127.0.0.1
+      port: 6379
+
+

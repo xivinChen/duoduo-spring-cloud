@@ -6,27 +6,38 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="duoduo-product-analyse-producer" />
-        <module name="duoduo-api-es" />
-        <module name="duoduo-consumer" />
         <module name="duoduo-product-search-producer" />
-        <module name="duoduo-swagger-ui" />
+        <module name="duoduo-service" />
+        <module name="duoduo-api-es" />
+        <module name="duoduo-boot-admin" />
         <module name="duoduo-user-producer" />
         <module name="scheduleX" />
-        <module name="duoduo-admin-producer" />
-        <module name="duoduo-api" />
+        <module name="service2" />
+        <module name="duoduo-proxy-demo" />
+        <module name="duoduo-swagger-ui" />
+        <module name="testgit" />
+        <module name="duoduo-consumer" />
+        <module name="service1" />
+        <module name="duoduo-open-search" />
+        <module name="duoduo-discovery-demo" />
         <module name="duoduo-tx-manager" />
         <module name="duoduo-redis" />
-        <module name="duoduo-service" />
+        <module name="duoduo-product-analyse-producer" />
+        <module name="duoduo-admin-producer" />
+        <module name="duoduo-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="duoduo-admin-producer" target="1.8" />
       <module name="duoduo-api" target="1.8" />
       <module name="duoduo-api-es" target="1.8" />
+      <module name="duoduo-boot-admin" target="1.8" />
       <module name="duoduo-consumer" target="1.8" />
+      <module name="duoduo-discovery-demo" target="1.8" />
+      <module name="duoduo-open-search" target="1.8" />
       <module name="duoduo-product-analyse-producer" target="1.8" />
       <module name="duoduo-product-search-producer" target="1.8" />
+      <module name="duoduo-proxy-demo" target="1.8" />
       <module name="duoduo-redis" target="1.8" />
       <module name="duoduo-service" target="1.8" />
       <module name="duoduo-spring-cloud" target="1.8" />
@@ -35,6 +46,9 @@
       <module name="duoduo-tx-manager" target="1.8" />
       <module name="duoduo-user-producer" target="1.8" />
       <module name="scheduleX" target="1.8" />
+      <module name="service1" target="1.8" />
+      <module name="service2" target="1.8" />
+      <module name="testgit" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

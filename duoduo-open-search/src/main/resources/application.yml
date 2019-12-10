@@ -1,0 +1,34 @@
+server:
+  port: 8400
+mybatis:
+  mapper-locations:
+    - classpath:mapping/*.xml
+spring:
+  application:
+    name: duoduo-open-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  main:
+    allow-bean-definition-overriding: true
+
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+      cluster-nodes: 127.0.0.1:9300
+      cluster-name: elasticsearch_bosen
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123zxc
+    database: 0
+    lettuce:
+      pool:
+        max-active: 32
+        max-wait: 300ms
+        max-idle: 16
+        min-idle: 8

@@ -7,13 +7,16 @@
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="tel" jdbcType="VARCHAR" property="tel" />
     <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="record_id" javaType="INTEGER" property="recordId" />
     <result column="status" jdbcType="TINYINT" property="status" />
     <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
     <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+    <association property="userRecord" javaType="cn.duoduo.vo.UserRecord" select="cn.UserRecordMapper.selectByPrimaryKey"
+                 column="record_id" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, username, tel, `password`, `status`, created_time, updated_time
+    id, username, tel, `password`, `status`,record_id, created_time, updated_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -47,10 +50,10 @@
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cn.duoduo.vo.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into user (username, tel, `password`, 
-      `status`, created_time, updated_time
+      `status`, created_time, updated_time,record_id
       )
     values (#{username,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{status,jdbcType=TINYINT}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}
+      #{status,jdbcType=TINYINT}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP},#{recordId,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cn.duoduo.vo.User" useGeneratedKeys="true">
@@ -150,5 +153,12 @@
     set password = #{param2}
     where tel= #{param1}
   </update>
+
+  <select id="selectByRecordId" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List"></include>
+    from user
+    where record_id=#{recordId}
+  </select>
 
 </mapper>

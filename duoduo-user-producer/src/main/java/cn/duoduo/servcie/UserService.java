@@ -7,11 +7,20 @@
 package cn.duoduo.servcie;
 
 import cn.duoduo.vo.User;
+import io.seata.rm.tcc.api.TwoPhaseBusinessAction;
+
+import java.util.List;
 
 public interface UserService {
+    //@TwoPhaseBusinessAction(name = "save",commitMethod = "saveConfirm",rollbackMethod = "saveCancel")
     int save(User user);
+
+    int saveConfirm(User user);
+    int saveCancel(User user);
 
     int delete(int id);
 
     User get(int id);
+
+    List<User> listByRecordId(int recordId);
 }

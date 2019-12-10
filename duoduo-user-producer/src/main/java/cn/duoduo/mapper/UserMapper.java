@@ -8,6 +8,8 @@ package cn.duoduo.mapper;
 
 import cn.duoduo.vo.User;
 
+import java.util.List;
+
 public interface UserMapper {
 
     int deleteByPrimaryKey(Integer id);
@@ -30,4 +32,6 @@ public interface UserMapper {
 
 
     int updatePasswordByTel(String tel,String password);
+
+    List<User> selectByRecordId(Integer recordId);
 }

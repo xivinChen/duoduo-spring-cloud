@@ -6,10 +6,12 @@
  */
 package cn.duoduo.vo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+
 
 public class User implements Serializable {
 
@@ -17,6 +19,8 @@ public class User implements Serializable {
     private String username;
     private String password;
     private String tel;
+    private int recordId;
+    private UserRecord userRecord;
     private int status;
     @ApiModelProperty(hidden = true)
     private Timestamp createdTime;
@@ -77,5 +81,36 @@ public class User implements Serializable {
 
     public void setUpdatedTime(Timestamp updatedTime) {
         this.updatedTime = updatedTime;
+    }
+
+    public int getRecordId() {
+        return recordId;
+    }
+
+    public void setRecordId(int recordId) {
+        this.recordId = recordId;
+    }
+
+    public UserRecord getUserRecord() {
+        return userRecord;
+    }
+
+    public void setUserRecord(UserRecord userRecord) {
+        this.userRecord = userRecord;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", tel='" + tel + '\'' +
+                ", recordId=" + recordId +
+                ", userRecord=" + userRecord +
+                ", status=" + status +
+                ", createdTime=" + createdTime +
+                ", updatedTime=" + updatedTime +
+                '}';
     }
 }

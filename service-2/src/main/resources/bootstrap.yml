@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+
+        # data-id 默认格式：${prefix}-${spring.profiles.active}.${file-extension}
+        #prefix默认为应用名称   即热没有prefix 的情况下加载和应用名一样的配置文件
+        #ext-config[0]:
+          #data-id: nacos-config-example.yml
+        ext-config[0]:
+          data-id: duoduo-mysql-config.yml
+          group: DUODUO_GROUP
+        ext-config[1]:
+          data-id: duodou-redis-config.yml
+          group: duoduo
+        ext-config[2]:
+          data-id: nacos-config-example.yml
+          group: DEFAULT_GROUP
